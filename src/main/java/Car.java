@@ -36,7 +36,6 @@ public class Car implements Runnable {
     public void run() {
         try {
             System.out.println(this.name + " готовится");
-            cl.await();//Сначала начнем подготовку
             Thread.sleep(500 + (int)(Math.random() * 800));
             System.out.println(this.name + " готов");
             cl.await();//Ожидание готовности
