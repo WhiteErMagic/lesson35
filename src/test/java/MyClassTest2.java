@@ -8,24 +8,24 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class MyClassTest {
+public class MyClassTest2 {
 
     private MyClass myClass;
 
     @Parameterized.Parameters
-    public static List<Object[][]> data(){
-        return (List<Object[][]>) Arrays.asList(new Object[][][]{
-                {{2,4,5,6,7}, {5,6,7}},
-                {{3,2,5,8,5,6,7}, {}},
-                {{6,5,8,7,3,4,12,1,2,4,65,7,8}, {65, 7, 8}},
-                {{5,6,7,8,3,2,1}, {}}
+    public static List<Object[]> data(){
+        return Arrays.asList(new Object[][]{
+                {new int[]{2,4,5,6,7}, true},
+                {new int[]{3,2,5,8,5,6,7}, false},
+                {new int[]{6,5,8,7,3,4,12,1,2,4,65,7,8}, true},
+                {new int[]{5,6,7,8,3,2,1}, true}
         });
     }
 
     private int[] a;
-    private int[] res;
+    private boolean res;
 
-    public MyClassTest(int[] a, int[] res) {
+    public MyClassTest2(int[] a, boolean res) {
         this.a = a;
         this.res = res;
     }
@@ -37,13 +37,6 @@ public class MyClassTest {
 
     @Test
     public void test(){
-        Assert.assertEquals(res, myClass.myArray(a));
-    }
-
-    @Test
-    public void test2(){
         Assert.assertEquals(res, myClass.myArray2(a));
     }
-
-
 }
