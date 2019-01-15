@@ -9,6 +9,7 @@ public class MyClass {
         for (int i = 0; i < arg.length; i++) {
             arr.add((Integer) arg[i]);
         }
+
         int found = arr.lastIndexOf(4);
         if(found == -1)
             throw new RuntimeException();
@@ -16,8 +17,8 @@ public class MyClass {
             found++;
 
         int[] intArr = new int[arr.size() - found];
-        for (int i = 0; i < intArr.length; i++) {
-            intArr[i] = arr.get(i + found);
+        for (int i = found; i < intArr.length; i++) {
+            intArr[i] = arr.get(i);
         }
         return intArr;
     }

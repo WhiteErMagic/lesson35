@@ -1,10 +1,13 @@
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MyTestSQLLite {
 
     private MyClass myClass;

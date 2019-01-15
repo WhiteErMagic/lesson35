@@ -35,11 +35,6 @@ public class MyClassTest {
         this.myClass = new MyClass();
     }
 
-    @Test
-    public void test(){
-        Assert.assertArrayEquals(res, myClass.myArray(a));
-    }
-
     @Test(expected = RuntimeException.class)
     public void test2(){
         Assert.assertArrayEquals(res, myClass.myArray(a));
